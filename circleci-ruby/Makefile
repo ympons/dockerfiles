@@ -1,4 +1,4 @@
-DOCKER_IMAGE := ympons/ruby
+DOCKER_IMAGE := ympons/circleci-ruby
 
 # Build docker image.
 build:
