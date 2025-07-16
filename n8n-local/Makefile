@@ -44,6 +44,11 @@ shell:
 	docker-compose exec n8n sh
 .PHONY: shell
 
+# Access SQLite database with sqlite3
+db:
+	docker run --rm -it -v n8n-local_n8n_data:/n8n alpine sh -c "apk add --no-cache sqlite && sqlite3 /n8n/database.sqlite"
+.PHONY: db
+
 # Clean up volumes (WARNING: This will delete all n8n data)
 clean:
 	docker-compose down -v
